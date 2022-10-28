@@ -7,7 +7,7 @@ export const StateContext = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setcartItems] = useState([]);
   const [totalPrice, settotalPrice] = useState();
-  const [totalQuantities, setTotalQuantities] = useState();
+  const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
 
   const onAdd = (product, quantity) => {
@@ -35,6 +35,10 @@ export const StateContext = ({ children }) => {
     toast.success(`${qty} ${product.name} added to the cart`);
   };
 
+  const checkOut = (product, quantity) => {
+    console.log("checkout page to be opened up");
+  };
+
   const incQty = () => {
     setQty((prevQty) => prevQty + 1);
   };
@@ -54,9 +58,11 @@ export const StateContext = ({ children }) => {
         totalPrice,
         totalQuantities,
         qty,
+        setShowCart,
         incQty,
         decQty,
         onAdd,
+        checkOut,
       }}
     >
       {children}
