@@ -5,9 +5,10 @@ const nextConfig = {
   fs: "empty",
 };
 
-// module.exports = nextConfig;
+// module.exports = ;
 
-smodule.exports = {
+module.exports = {
+  nextConfig,
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback.fs = false;
