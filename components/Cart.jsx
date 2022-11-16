@@ -20,6 +20,7 @@ const Cart = () => {
     cartItems,
     setShowCart,
     toggleCartItemQuantity,
+    onDelete,
   } = useStateContext();
 
   const updateItemNumber = () => {
@@ -91,7 +92,7 @@ const Cart = () => {
                     <button
                       type="button"
                       className="remove-item"
-                      onClick={() => console.log("remove item")}
+                      onClick={() => onDelete()}
                     >
                       <TiDeleteOutline />
                     </button>
@@ -111,7 +112,7 @@ const Cart = () => {
               <button
                 type="button"
                 className="btn"
-                onClick={() => console.log("checkout clicked")}
+                onClick={() => console.log("Integrate with Payment Gateway")}
               >
                 Checkout
               </button>
