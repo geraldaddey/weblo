@@ -25,16 +25,16 @@ const ProductDetails = ({ product, products }) => {
           </div>
 
           <div className="small-images-container">
-  {image?.map((item, i) => (
-    <img
-      key={i} // Assign a unique key prop based on the index 'i'
-      src={urlFor(item)}
-      className={i === index ? "small-image selected-image" : "small-image"}
-      onMouseEnter={() => setIndex(i)}
-    />
-  ))}
-</div>
-
+            {image?.map((item, i) => (
+              <img
+                src={urlFor(item)}
+                className={
+                  i === index ? "small-image selected-image" : "small-image"
+                }
+                onMouseEnter={() => setIndex(i)}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="product-detail-desc">
